@@ -174,14 +174,7 @@ public class ProductService {
                    productionEntity.setOrderCode(orderEntity.get().getOrderCode());
                    productionEntity.setStatus(orderEntity.get().getStatus());
                    productionR.save(productionEntity);
-                   OrderModel orderModel = new OrderModel();
-                   orderModel.setOrderCode(orderEntity.get().getOrderCode());
-                   orderModel.setProductName(orderEntity.get().getStockEntity().getSkuEntity().getProductEntity().getProductName());
-                   orderModel.setSkuCode(orderEntity.get().getStockEntity().getSkuCode());
-                   orderModel.setSkuSize(orderEntity.get().getStockEntity().getSkuEntity().getSize());
-                   orderModel.setQuantity(orderEntity.get().getQuantity());
-                   orderModel.setPrice(orderEntity.get().getStockEntity().getSkuEntity().getPriceEntity().getPrice());
-                   orderModel.setStatus(orderEntity.get().getStatus());
+
                    return "***************Processing****************";
                }
                return "Order Not Received";
@@ -199,14 +192,7 @@ public class ProductService {
                    packingEntity.setOrderCode(orderEntity.get().getOrderCode());
                    packingEntity.setStatus(orderEntity.get().getStatus());
                    packingR.save(packingEntity);
-                   OrderModel orderModel = new OrderModel();
-                   orderModel.setOrderCode(orderEntity.get().getOrderCode());
-                   orderModel.setProductName(orderEntity.get().getStockEntity().getSkuEntity().getProductEntity().getProductName());
-                   orderModel.setSkuCode(orderEntity.get().getStockEntity().getSkuCode());
-                   orderModel.setSkuSize(orderEntity.get().getStockEntity().getSkuEntity().getSize());
-                   orderModel.setQuantity(orderEntity.get().getQuantity());
-                   orderModel.setPrice(orderEntity.get().getStockEntity().getSkuEntity().getPriceEntity().getPrice());
-                   orderModel.setStatus(orderEntity.get().getStatus());
+
                    return "**************Packing**************";
                }
                return "Order Not Processed";
@@ -224,14 +210,7 @@ public class ProductService {
                    shippingEntity.setOrderCode(orderEntity.get().getOrderCode());
                    shippingEntity.setStatus(orderEntity.get().getStatus());
                    shippingR.save(shippingEntity);
-                   OrderModel orderModel = new OrderModel();
-                   orderModel.setOrderCode(orderEntity.get().getOrderCode());
-                   orderModel.setProductName(orderEntity.get().getStockEntity().getSkuEntity().getProductEntity().getProductName());
-                   orderModel.setSkuCode(orderEntity.get().getStockEntity().getSkuCode());
-                   orderModel.setSkuSize(orderEntity.get().getStockEntity().getSkuEntity().getSize());
-                   orderModel.setQuantity(orderEntity.get().getQuantity());
-                   orderModel.setPrice(orderEntity.get().getStockEntity().getSkuEntity().getPriceEntity().getPrice());
-                   orderModel.setStatus(orderEntity.get().getStatus());
+
                    return "**************Shipping**************";
                }
                return "Order Not Packed";
@@ -250,14 +229,7 @@ public class ProductService {
                    deliveredEntity.setOrderCode(orderEntity.get().getOrderCode());
                    deliveredEntity.setStatus(orderEntity.get().getStatus());
                    deliveredR.save(deliveredEntity);
-                   OrderModel orderModel = new OrderModel();
-                   orderModel.setOrderCode(orderEntity.get().getOrderCode());
-                   orderModel.setProductName(orderEntity.get().getStockEntity().getSkuEntity().getProductEntity().getProductName());
-                   orderModel.setSkuCode(orderEntity.get().getStockEntity().getSkuCode());
-                   orderModel.setSkuSize(orderEntity.get().getStockEntity().getSkuEntity().getSize());
-                   orderModel.setQuantity(orderEntity.get().getQuantity());
-                   orderModel.setPrice(orderEntity.get().getStockEntity().getSkuEntity().getPriceEntity().getPrice());
-                   orderModel.setStatus(orderEntity.get().getStatus());
+
                    return "**************Delivered**************";
                }
                return "Order Not Shipped";
@@ -281,14 +253,7 @@ public class ProductService {
                    StockEntity stockEntity=stockR.getById(orderEntity.get().getStockEntity().getSkuCode());
                    stockEntity.setQuantity(stockEntity.getQuantity()+orderEntity.get().getQuantity());
                    stockR.save(stockEntity);
-                   OrderModel orderModel = new OrderModel();
-                   orderModel.setOrderCode(orderEntity.get().getOrderCode());
-                   orderModel.setProductName(orderEntity.get().getStockEntity().getSkuEntity().getProductEntity().getProductName());
-                   orderModel.setSkuCode(orderEntity.get().getStockEntity().getSkuCode());
-                   orderModel.setSkuSize(orderEntity.get().getStockEntity().getSkuEntity().getSize());
-                   orderModel.setQuantity(orderEntity.get().getQuantity());
-                   orderModel.setPrice(orderEntity.get().getStockEntity().getSkuEntity().getPriceEntity().getPrice());
-                   orderModel.setStatus(orderEntity.get().getStatus());
+
                    return "**************Returned**************";
                }
                return "Order Not Delivered";
